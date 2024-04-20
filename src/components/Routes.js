@@ -1,6 +1,5 @@
 import React from "react";
 
-
 import Cadastro from "./paginas/Cadastro";
 import Principal from "./paginas/Principal";
 import Login from "./paginas/Login";
@@ -12,8 +11,8 @@ const AppRoutes = () => {
     return (
         <Router>
             <Routes>
-                <Route exact={true} path="/" element={<Login />} />
-                <Route exact={true} path="/cadastro" element={<Cadastro />} />
+                <Route exact={true} path="/login" element={<Login />} />
+                <Route exact={true} path="/" element={<Cadastro />} />
                 <Route exact={true} path="/principal" element={<Principal />} />
                 <Route exact={true} path="*" element={<NotFound />} />
             </Routes>

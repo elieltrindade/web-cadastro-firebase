@@ -1,14 +1,75 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import './Estilos-globais.css'
+import './Login.css'
+import firebase from '../Firebase';
 
-function Login() {
-    return(
-        <div>
-            <h1>Login</h1>
-            <Link to="/cadastro"><button>Fazer Cadastro</button></Link>
-            <Link to="/principal"><button>Contato</button></Link>
-        </div>
-    )
 
+class Login extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            usuario: [{ email: "jorge@jorge", senha: "jorge" }],
+            email: "",
+            senha: ""
+        };
+        this.validar = this.validar.bind(this);
+    }
+
+    preencherCampo(event, campo) {
+        const value = event.target.value;
+        this.setState({
+            [campo]: value
+        });
+    }
+
+    async validar() {
+        await firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.senha)
+            .then(() => {
+                window.location.href = "./principal";
+            })
+            .catch((erro) => {
+                this.setState({ mensagem: "Usuário ou senha incorretos!" })
+            });
+    }
+
+    render() {
+        return (
+            <div className="app-container">
+
+                <header>
+                    <Link to="/login" className="header-link">Login</Link>
+                    <Link to="/" className="header-link">Fazer Cadastro</Link>
+                    <Link to="/principal" className="header-link">Principal</Link>
+                </header>
+
+                <main className="main-content">
+                    <div className="centered-content">
+                        <div className="wrapper-login">
+                            <div>
+                                <h1 className="titulo">Login</h1>
+                            </div>
+                            <div>
+                                <label className="descricao-login" for="email">E-mail:</label><br />
+                                <input className="campo-login" id="email" type="text" size="20" name="email" placeholder="Informe seu e-mail" value={this.state.email} onChange={(e) => this.preencherCampo(e, "email")} />
+                            </div>
+                            <div>
+                                <label className="descricao-login" for="password"> Senha:</label><br />
+                                <input className="campo-login" id="password" type="password" size="20" name="password" placeholder="Informe sua palavra-passe" value={this.state.senha} onChange={(e) => this.preencherCampo(e, "senha")} />
+                            </div>
+                            <div className="divbotaoAcesso">
+                                <button className="botaoAcesso" type="submit" onClick={this.validar}>Acessar</button>
+                            </div>
+                            <div className={`mensagem ${this.state.mensagem === "Acessado com sucesso!" ? "sucesso" : "erro"}`}>
+                                {this.state.mensagem}
+                            </div>
+                        </div>
+                    </div>
+                </main >
+            </div>
+        )
+    };
 }
 export default Login;

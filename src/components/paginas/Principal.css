@@ -1,0 +1,68 @@
+.app-container{
+    background-color: #e4ebf0;
+}
+header {
+    height: 40px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.header-link {
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+.header-link:hover {
+    color:#5968fb;
+}
+
+.header-link:active{
+    color: #48a2c2;
+}
+
+.main-content-principal{
+    position: relative;
+    /* Precisa ter posição relativa para o posicionamento absoluto do container */
+    display: flex;
+    justify-content: center;
+    /* Alinhe o conteúdo horizontalmente no centro */
+    align-items: center;
+    /* Alinhe o conteúdo verticalmente no centro */
+    margin: 0em 8em;
+}
+
+.centered-container {
+    position: absolute;
+    /* Posição absoluta para centralizar o container */
+}
+
+.wrapper-principal {
+    width: 33em;
+    height: 23em;
+    background-color: #b8d7e5;
+    padding: 1em 2em;
+    border-radius: 0.7em;
+}
+h1{
+    text-align: center;
+    font-size: 3.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0em;
+    margin: 0.2em 0em 0.7em;
+}
+
+.descricao{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    margin-right: 0.5em;
+}
+
+.resposta{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+}

@@ -1,0 +1,53 @@
+.main-content{
+    position: relative;
+    /* Precisa ter posição relativa para o posicionamento absoluto do container */
+    display: flex;
+    justify-content: center;
+    /* Alinhe o conteúdo horizontalmente no centro */
+    align-items: center;
+    /* Alinhe o conteúdo verticalmente no centro */
+}
+
+.centered-container {
+    position: absolute;
+    /* Posição absoluta para centralizar o container */
+}
+
+.wrapper-login {
+    width: 27em;
+    height: 30em;
+    background-image: linear-gradient(to bottom, #b8d7e5, #e9ebee);
+    padding: 1em 2em;
+    border-radius: 0.7em;
+}
+
+
+.descricao-login {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.campo-login {
+    height: 1.8em;
+    width: 16em;
+    font-size: 1.5em;
+    border-radius: 0.4em;
+    padding-left: 0.8em;
+    margin-bottom: 1em;
+}
+
+.divbotaoAcesso {
+    display: flex;
+    justify-content: right;
+    margin-top: 1em;
+
+}
+
+.mensagem {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 1em;
+    color: #a40b05;
+}
+
+

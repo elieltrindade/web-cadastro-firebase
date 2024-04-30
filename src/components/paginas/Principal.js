@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import firebase from '../Firebase';
 import './Estilos-globais.css'
 import './Principal.css';
+import Header from "./Header";
 
 /*Irá montar o componente vazio*/
 class Principal extends Component {
@@ -44,27 +45,25 @@ class Principal extends Component {
     render() {
         return (
             <div className="app-container">
-                <header>
-                    <Link to="/login" className="header-link">Login</Link>
-                    <Link to="/" className="header-link">Fazer Cadastro</Link>
-                    <Link to="/principal" className="header-link">Principal</Link>
-                </header>
+                <div>
+                    <Header/>
+                </div>
 
-                <main className="main-content-principal">
+                <main className="flex flex-center main-content-principal">
                     <div className="centered-content">
                         <div className="wrapper-principal">
-                            <h1>Principal</h1>
-                            <span className='descricao'>Nome:</span>
-                            <span className="resposta">{this.state.nome} </span> 
+                            <h1 className='flex flex-center font-principal'>Principal</h1>
+                            <span className='font-descricao descricao-principal'>Nome: </span>
+                            <span className=" font-principal data-user">{this.state.nome} </span> 
                             <br /><br />
-                            <span className="descricao">Sobrenome:</span>
-                            <span className='resposta'> {this.state.sobrenome} </span> 
+                            <span className="font-descricao descricao-principal">Sobrenome: </span>
+                            <span className='font-principal data-user'>{this.state.sobrenome} </span> 
                             <br /><br />
-                            <span className="descricao">Data de Nascimento:</span>
-                            <span className='resposta'>{this.state.dataNascimento.toLocaleString()} </span>
+                            <span className="font-descricao descricao-principal">Data de Nascimento: </span>
+                            <span className='font-principal data-user'>{this.state.dataNascimento.toLocaleString()} </span>
                             <br /><br /> 
-                            <span className="descricao">E-mail:</span>
-                            <span className='resposta'>{this.state.email} </span> <br />
+                            <span className="font-descricao descricao-principal">E-mail: </span>
+                            <span className='font-principal data-user'>{this.state.email} </span> <br />
                         </div>
                     </div>
                 </main>

@@ -1,21 +1,21 @@
-.main-content-notfound{
+.main-content-notfound {
     position: relative;
     /* Precisa ter posição relativa para o posicionamento absoluto do container */
-    display: flex;
-    justify-content: center;
     /* Alinhe o conteúdo horizontalmente no centro */
     align-items: center;
     /* Alinhe o conteúdo verticalmente no centro */
-flex-direction: column;   
+    flex-direction: column;
+    height: 100vh;
 }
 
 
-.div-icon{
+.div-icon-notfound {
     margin-bottom: 30px;
+    align-items: center;
 }
 
-.icon{
-    font-size: 30em;
+.icon-notfound {
+    font-size: 20em;
     color: silver;
- 
+
 }
